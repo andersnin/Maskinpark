@@ -22,10 +22,11 @@ public class App {
 			// Legg til ny laptop
 			Laptop.createNewLaptop();
 		} else if (menu.equals("2")){
-			// TODO Legg til ny desktop
+			// Legg til ny desktop
 			Desktop.createNewDesktop();
 		} else if (menu.equals("3")){
-			// TODO Legg til ny server
+			// Legg til ny server
+			Server.createNewServer();
 		} else if (menu.equals("4")){
 			while (true) {
 				System.out.println("4.1: Vis registrerte laptops");
@@ -36,19 +37,21 @@ public class App {
 				String infoMenu = in.next();
 
 				if (infoMenu.equals("1")) {
-					Laptop.showLaptops();
+					ReportImpl report = new ReportImpl();
+					report.showReport("Laptop");
 				} if (infoMenu.equals("2")) {
-					Desktop.showDesktops();
+					ReportImpl report = new ReportImpl();
+					report.showReport("Desktop");
+				} if (infoMenu.equals("3")) {
+					ReportImpl report = new ReportImpl();
+					report.showReport("Server");
 				} if (infoMenu.equals("4")) {
-					Computer.showComputers();
+					ReportImpl report = new ReportImpl();
+					report.showReport("Computer");
 				} else if (infoMenu.equals("5")) {
 					break;
 				};
 			}
-//			System.out.println(Laptop.getNumberOfLaptops());
-//			System.out.println("Registrerte laptops: "+Laptop.getLaptopList());
-//			System.out.println(Desktop.getNumberOfDesktops());
-//			System.out.println(Computer.getNumberOfComputers());
 		} else {
 			System.out.println("Ukjent menyvalg");
 		}

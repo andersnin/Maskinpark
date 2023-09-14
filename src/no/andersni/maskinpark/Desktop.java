@@ -8,7 +8,7 @@ public class Desktop extends Computer {
 	private String cabinetType;
 	private static int numberOfDesktops;
 
-	private static List<Desktop> desktopList = new ArrayList<>();
+	protected static List<Desktop> desktopList = new ArrayList<>();
 
 	public Desktop() {
 		super(); // Run constructor in Computer
@@ -16,7 +16,7 @@ public class Desktop extends Computer {
 	}
 
 	public static void createNewDesktop() {
-		System.out.println("Opprett desktop:");
+		System.out.println("Legg inn desktop:");
 		Desktop d = new Desktop();
 		Scanner add = new Scanner(System.in);
 

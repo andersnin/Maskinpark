@@ -101,4 +101,8 @@ public class Computer {
 	static int getNumberOfComputers() {
 		return numberOfComputers;
 	}
+
+	public static int getTotalPriceOfComputers() {
+		return computerList.stream().mapToInt(Computer::getPrice).sum();
+	}
 }

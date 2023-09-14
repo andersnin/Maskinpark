@@ -9,7 +9,7 @@ public class Laptop extends Computer {
 	protected int screenSize;
 	private static int numberOfLaptops;
 
-	private static List<Laptop> laptopList = new ArrayList<>();
+	protected static List<Laptop> laptopList = new ArrayList<>();
 
 	public Laptop() {
 		super(); // Run constructor in Computers
