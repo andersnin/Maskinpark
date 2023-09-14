@@ -1,5 +1,8 @@
 package no.andersni.maskinpark;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Computer {
 	protected String brand;
 	protected String modelName;
@@ -12,8 +15,23 @@ public class Computer {
 
 	static int numberOfComputers;
 
+	protected static List<Computer> computerList = new ArrayList<>();
+
 	public Computer() {
 		numberOfComputers++;
+	}
+
+	public static void showComputers() {
+		System.out.println(getNumberOfComputers() + (getNumberOfComputers() == 1 ? " Maskin" : " Maskiner"));
+		System.out.println("-".repeat(30));
+		System.out.printf("%-15s %-15s %-15s %-6s\n", "Produsent", "Modell", "Produksjonsår", "Pris");
+		for (Computer computer : computerList) {
+			System.out.printf("%-15s %-15s %-15s %-6s\n", computer.getBrand(), computer.getModelName(), computer.modelYear, computer.getPrice());
+		}
+		System.out.println("-".repeat(30));
+		int sum = computerList.stream().mapToInt(Computer::getPrice).sum();
+		System.out.printf("%-22s %-6d\n", "SUM", sum);
+		System.out.println("-".repeat(30));
 	}
 
 	public String getBrand() {
