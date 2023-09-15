@@ -51,19 +51,6 @@ public class Laptop extends Computer {
 		Computer.computerList.add(l);
 	}
 
-	public static void showLaptops() {
-		System.out.println(getNumberOfLaptops() + (getNumberOfLaptops() == 1 ? " Laptop" : " Laptopper"));
-		System.out.println("-".repeat(30));
-		System.out.printf("%-15s %-15s %-15s %-6s\n", "Produsent", "Modell", "Produksjonsår", "Pris");
-		for (Laptop laptop : laptopList) {
-			System.out.printf("%-15s %-15s %-15s %-6s\n", laptop.getBrand(), laptop.getModelName(), laptop.modelYear, laptop.getPrice());
-		}
-		System.out.println("-".repeat(30));
-		int sum = laptopList.stream().mapToInt(Laptop::getPrice).sum();
-		System.out.printf("%-22s %-6d\n", "SUM", sum);
-		System.out.println("-".repeat(30));
-	}
-
 	public static List<Laptop> getLaptopList() {
 		return laptopList;
 	}
